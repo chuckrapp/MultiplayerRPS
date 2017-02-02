@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multiplayer RPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Game results Modal -->
+    <div id="rpsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="modalContent" class="text-center"></div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+<!-- Too many players Modal -->
+    <div id="tooManyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h2>Sorry, too many players are currently playing... Try again in a little bit!</h2>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-fluid">
+        <div id="loginArea" class="col-md-12 text-center">
+            <h2>Enter your name to begin!</h2>
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" placeholder="Enter name here">
+                </div>
+                <button type="button" id="userLogin" class="btn btn-primary">Start</button>
+            </form>
+        </div>
+        <div class="row col-md-12">
+            <button type="button" id="logout" class="btn btn-primary pull-right hidden">Logout</button>
+        </div>
+        <div id="gameArea" class="hidden">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 text-center">
+                    <div class="row">
+                        <h1 id="p1NameTitle">Player 1</h1>
+                    </div>
+                    <div class="row">
+                        <h3>Choose an option!</h3>
+                        <button id="p1Rock" class="btn btn-lg btn-warning">Rock</button>
+                        <button id="p1Paper" class="btn btn-lg btn-info">Paper</button>
+                        <button id="p1Scissor" class="btn btn-lg btn-success">Scissor</button>
+                        <br>
+                        <br>
+                        <div id="p1Status">Waiting for response</div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 text-center">
+                    <div class="row">
+                        <h1 id="p2NameTitle">Player 2</h1>
+                    </div>
+                    <div class="row">
+                        <h3>Choose an option!</h3>
+                        <button id="p2Rock" class="btn btn-lg btn-warning">Rock</button>
+                        <button id="p2Paper" class="btn btn-lg btn-info">Paper</button>
+                        <button id="p2Scissor" class="btn btn-lg btn-success">Scissor</button>
+                        <br>
+                        <br>
+                        <div id="p2Status">Waiting for response</div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-3"></div>
+                <div id="p1Score" class="col-md-2 col-sm-2"></div>
+                <div id="pTies" class="col-md-2 col-sm-2"></div>
+                <div id="p2Score" class="col-md-2 col-sm-2"></div>
+                <div class="col-md-3 col-sm-3"></div>
+            </div>
+            <div id="results"></div>
+            <h2>Chat</h2>
+            <div id="chatLog" style="overflow: auto; height: 150px; border: 1px solid black;"></div>
+            <form id="chat-form" class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="chatInput" placeholder="Enter message here">
+                </div>
+                <button type="button" id="btnSend" class="btn btn-default">Send</button>
+            </form>
+            <!-- <textarea id="chatInput"></textarea> -->
+            <!-- <button id="btnSend">Send</button> -->
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/game3.js"></script>
+</body>
+
+</html>
