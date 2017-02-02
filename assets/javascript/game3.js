@@ -1,10 +1,10 @@
 //config file for Firebase
 var config = {
-    apiKey: "AIzaSyAcqjj067dz6IFXnVo029pz243Z33I-vy0",
-    authDomain: "my-first-project-3c4a9.firebaseapp.com",
-    databaseURL: "https://my-first-project-3c4a9.firebaseio.com",
-    storageBucket: "my-first-project-3c4a9.appspot.com",
-    messagingSenderId: "154695835745"
+    apiKey: "AIzaSyC24POCXRxkMSN_Bf1FtlVmdb8PsdNRY2I",
+    authDomain: "rps-multiplayer-4efac.firebaseapp.com",
+    databaseURL: "https://rps-multiplayer-4efac.firebaseio.com",
+    storageBucket: "rps-multiplayer-4efac.appspot.com",
+    messagingSenderId: "601451583285"
 };
 //initialize firebase
 firebase.initializeApp(config);
